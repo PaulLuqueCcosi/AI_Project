@@ -1,4 +1,16 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+def graficar(edad_min, edad_bajo_riesgo, edad_alto_riesgo, edad_max):
+    x = np.linspace(20, 100, 100)
+    y = [trapezoidal(val, edad_min, edad_bajo_riesgo, edad_alto_riesgo, edad_max) for val in x]
+    plt.plot(x, y)
+    plt.xlabel("Edad")
+    plt.ylabel("Grado de pertenencia")
+    plt.title("Función de Trapezoidal")
+    plt.grid()
+    plt.show()
 
 def trapezoidal(x, a, b, c, d):
     if x <= a or x >= d:
@@ -30,3 +42,7 @@ adulto_mayor = edades.apply(lambda x: trapezoidal(x, edad_alto_riesgo, edad_max,
 # Mostrar el grado de pertenencia para cada edad ingresada
 for i, edad in enumerate(edades):
     print(f"Edad: {edad}, Grado de pertenencia a 'joven': {joven.iloc[i]}, Grado de pertenencia a 'adulto': {adulto.iloc[i]}, Grado de pertenencia a 'adulto_mayor': {adulto_mayor.iloc[i]}")
+# Graficar
+graficar(edad_min,edad_bajo_riesgo,edad_alto_riesgo,edad_max)
+
+
