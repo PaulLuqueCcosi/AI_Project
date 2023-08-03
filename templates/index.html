@@ -11,46 +11,49 @@
         <img src="{{ url_for('static', filename='imagen.png') }}" alt="Imagen de diabetes">
         <h1>Diagnóstico de diabetes con Inteligencia Artificial</h1>
     </div>
+    
     <div class="container">
         <h2>Ingrese los datos:</h2>
         <form action="/" method="post">
+            <!-- ... Código HTML anterior ... -->
             <div class="field-container">
                 <label for="embarazos">Embarazos:</label>
-                <input type="number" name="embarazos" id="embarazos" placeholder="Ingrese el número de embarazos"
-                    required>
+                <input type="number" name="embarazos" id="embarazos" placeholder="Número de embarazos (0-15)"
+                    required min="0" max="15">
             </div>
             <div class="field-container">
                 <label for="glucosa">Glucosa:</label>
-                <input type="number" name="glucosa" id="glucosa" placeholder="Ingrese el nivel de glucosa" required>
+                <input type="number" name="glucosa" id="glucosa" placeholder="Nivel de glucosa (0-250)" required
+                    min="0" max="250">
             </div>
             <div class="field-container">
                 <label for="presion_arterial">Presión arterial:</label>
                 <input type="number" name="presion_arterial" id="presion_arterial"
-                    placeholder="Ingrese la presión arterial" required>
+                    placeholder="Presión arterial (0-200)" required min="0" max="200">
             </div>
             <div class="field-container">
                 <label for="grosor_piel">Grosor de la piel:</label>
-                <input type="number" name="grosor_piel" id="grosor_piel" placeholder="Ingrese el grosor de la piel"
-                    required>
+                <input type="number" name="grosor_piel" id="grosor_piel" placeholder="Grosor de la piel (0-150)"
+                    required min="0" max="150">
             </div>
             <div class="field-container">
                 <label for="insulina">Insulina:</label>
-                <input type="number" name="insulina" id="insulina" placeholder="Ingrese la cantidad de insulina"
-                    required>
+                <input type="number" name="insulina" id="insulina" placeholder="Cantidad de insulina (0-700)"
+                    required min="0" max="700">
             </div>
             <div class="field-container">
                 <label for="imc">IMC:</label>
-                <input type="number" name="imc" id="imc" step="0.01" placeholder="Ingrese el índice de masa corporal"
-                    required>
+                <input type="number" name="imc" id="imc" step="0.01" placeholder="Indice de masa corporal (10-90)"
+                    required min="10" max="90">
             </div>
             <div class="field-container">
                 <label for="diabetes_genealogia">Diabetes Genealogía:</label>
                 <input type="number" name="diabetes_genealogia" id="diabetes_genealogia" step="0.01"
-                    placeholder="Ingrese la diabetes genealogía" required>
+                    placeholder="Diabetes genealogía (0-2)" required min="0" max="2">
             </div>
             <div class="field-container">
                 <label for="edad">Edad:</label>
-                <input type="number" name="edad" id="edad" placeholder="Ingrese la edad" required>
+                <input type="number" name="edad" id="edad" placeholder="Edad (0-150)" required min="0" max="150">
             </div>
             <input type="submit" value="Predecir">
         </form>
@@ -67,4 +70,4 @@
     </div>
 </body>
 
-</html>
+<!-- ... Código HTML anterior ... -->
