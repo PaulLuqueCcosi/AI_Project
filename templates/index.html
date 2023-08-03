@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diagnóstico de diabetes con Inteligencia Artificial</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="encabezado-content">
+        <img src="{{ url_for('static', filename='imagen.png') }}" alt="Imagen de diabetes">
+        <h1>Diagnóstico de diabetes con Inteligencia Artificial</h1>
+    </div>
+    <div class="container">
+        <h2>Ingrese los datos:</h2>
+        <form action="/" method="post">
+            <div class="field-container">
+                <label for="embarazos">Embarazos:</label>
+                <input type="number" name="embarazos" id="embarazos" placeholder="Ingrese el número de embarazos"
+                    required>
+            </div>
+            <div class="field-container">
+                <label for="glucosa">Glucosa:</label>
+                <input type="number" name="glucosa" id="glucosa" placeholder="Ingrese el nivel de glucosa" required>
+            </div>
+            <div class="field-container">
+                <label for="presion_arterial">Presión arterial:</label>
+                <input type="number" name="presion_arterial" id="presion_arterial"
+                    placeholder="Ingrese la presión arterial" required>
+            </div>
+            <div class="field-container">
+                <label for="grosor_piel">Grosor de la piel:</label>
+                <input type="number" name="grosor_piel" id="grosor_piel" placeholder="Ingrese el grosor de la piel"
+                    required>
+            </div>
+            <div class="field-container">
+                <label for="insulina">Insulina:</label>
+                <input type="number" name="insulina" id="insulina" placeholder="Ingrese la cantidad de insulina"
+                    required>
+            </div>
+            <div class="field-container">
+                <label for="imc">IMC:</label>
+                <input type="number" name="imc" id="imc" step="0.01" placeholder="Ingrese el índice de masa corporal"
+                    required>
+            </div>
+            <div class="field-container">
+                <label for="diabetes_genealogia">Diabetes Genealogía:</label>
+                <input type="number" name="diabetes_genealogia" id="diabetes_genealogia" step="0.01"
+                    placeholder="Ingrese la diabetes genealogía" required>
+            </div>
+            <div class="field-container">
+                <label for="edad">Edad:</label>
+                <input type="number" name="edad" id="edad" placeholder="Ingrese la edad" required>
+            </div>
+            <input type="submit" value="Predecir">
+        </form>
+        {% if result %}
+        <div class="result">
+            <h3>Resultado:</h3>
+            <p>{{ result }}</p>
+            {% if error_margin is not none %}
+            <p>Margen de error: {{ error_margin }}%</p>
+            {% endif %}
+
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
